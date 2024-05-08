@@ -2,26 +2,20 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "location": {
-            "value": "West US"
-        },
-        "databaseName": {
-            "value": "MyDatabase"
-        },
-        "adminUsername": {
-            "value": "admin"
-        },
-        "adminPassword": {
-            "value": "P@ssw0rd"
+        "appName": {
+            "value": "yourAppName"
         },
         "resourceGroup": {
-            "value": "GitHub-Copilot-Challenges"
+            "value": "yourResourceGroup"
+        },
+        "location": {
+            "value": "yourLocation"
+        },
+        "sku": {
+            "value": "yourSKU"
         },
         "serverFarm": {
-            "value": "MyServerFarm"
-        },
-        "websiteName": {
-            "value": "MyWebsite"
+            "value": "yourServerFarm"
         }
     }
 }
