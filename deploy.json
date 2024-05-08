@@ -1,0 +1,42 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "appName": {
+            "type": "string",
+            "metadata": {
+                "description": "The name of the app."
+            }
+        },
+        "location": {
+            "type": "string",
+            "metadata": {
+                "description": "The location where the app will be deployed."
+            }
+        },
+        "sku": {
+            "type": "string",
+            "metadata": {
+                "description": "The SKU of the app."
+            }
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Web/sites",
+            "apiVersion": "2021-02-01",
+            "name": "[parameters('appName')]",
+            "location": "[parameters('location')]",
+            "properties": {
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'appServicePlanName')]"
+            },
+            "sku": {
+                "name": "[parameters('sku')]",
+                "tier": "Standard",
+                "size": "S1",
+                "family": "S",
+                "capacity": 1
+            }
+        }
+    ]
+}
