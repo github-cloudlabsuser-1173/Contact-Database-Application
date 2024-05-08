@@ -6,13 +6,13 @@
             "type": "string",
             "metadata": {
                 "description": "The name of the app."
-            },
+            }
+        },
         "resourceGroup": {
             "type": "string",
             "metadata": {
                 "description": "The name of the resource group."
             }
-        }
         },
         "location": {
             "type": "string",
@@ -25,23 +25,35 @@
             "metadata": {
                 "description": "The SKU of the app."
             }
+        },
+        "serverFarmName": {
+            "type": "string",
+            "metadata": {
+                "description": "The name of the server farm."
+            }
         }
     },
     "resources": [
         {
-            "type": "Microsoft.Web/sites",
+            "type": "Microsoft.Web/serverfarms",
             "apiVersion": "2021-02-01",
-            "name": "[parameters('appName')]",
+            "name": "[parameters('serverFarmName')]",
             "location": "[parameters('location')]",
-            "properties": {
-                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'appServicePlanName')]"
-            },
             "sku": {
                 "name": "[parameters('sku')]",
                 "tier": "Standard",
                 "size": "S1",
                 "family": "S",
                 "capacity": 1
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites",
+            "apiVersion": "2021-02-01",
+            "name": "[parameters('appName')]",
+            "location": "[parameters('location')]",
+            "properties": {
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverFarmName'))]"
             }
         }
     ]
