@@ -16,6 +16,12 @@
         },
         "resourceGroup": {
             "value": "GitHub-Copilot-Challenges"
+        },
+        "serverFarm": {
+            "value": "MyServerFarm"
+        },
+        "websiteName": {
+            "value": "MyWebsite"
         }
     }
 }
