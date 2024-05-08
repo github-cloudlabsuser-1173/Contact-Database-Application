@@ -13,6 +13,9 @@
         },
         "adminPassword": {
             "value": "P@ssw0rd"
+        },
+        "resourceGroup": {
+            "value": "GitHub-Copilot-Challenges"
         }
     }
 }
