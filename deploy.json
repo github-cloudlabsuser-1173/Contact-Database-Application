@@ -53,7 +53,7 @@
             "name": "[parameters('appName')]",
             "location": "[parameters('location')]",
             "properties": {
-                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverFarmName'))]"
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverFarm'))]"
             }
         }
     ]

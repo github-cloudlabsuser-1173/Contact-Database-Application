@@ -3,19 +3,19 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "appName": {
-            "value": "yourAppName"
+            "value": "1326225App"
         },
         "resourceGroup": {
-            "value": "yourResourceGroup"
+            "value": "GitHub-Copilot-Challenges"
         },
         "location": {
-            "value": "yourLocation"
+            "value": "East US"
         },
         "sku": {
-            "value": "yourSKU"
+            "value": "S1"
         },
         "serverFarm": {
-            "value": "yourServerFarm"
+            "value": "1326225ServerFarm"
         }
     }
 }
